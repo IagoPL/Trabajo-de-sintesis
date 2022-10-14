@@ -9,8 +9,10 @@ public class MainAppPanel {
 
 
     // FRAME QUE ENMARCA LA PANTALLA DE LOGIN
+
     static AppWindow MainAppWindow = new AppWindow();
-    LoginPanel LoginPanel = new LoginPanel();
+
+//TODO: borrar esto mas adelante    LoginPanel LoginPanel = new LoginPanel();
 
     // PANELES CON LAS PANTALLAS DEL LOGIN
 
@@ -39,15 +41,23 @@ public class MainAppPanel {
             PanelContenedor.setLayout(CardLayout);
 
             //Se establece color de fondo para el JPanel
-            panelUsuario.setBackground(Color.RED);
+
+            JLabel fondoPanelUsuario = new JLabel(
+                    new ImageIcon(Objects.requireNonNull(getClass().getResource("images/Login.png"))));// Imagen de
+            // FONDO
+
+            fondoPanelUsuario.setLayout(null);// Ningun Layout en Especial
+
 
             // BOTÓN DE Usuario
 
             Usuario = crearBotonLogin(462, 566, 233, 63, "singIn");
 
-            //JPanel añade JButton
 
-            panelUsuario.add(Usuario);
+            //Fondo se alade a usuario + JButton
+
+            fondoPanelUsuario.add(Usuario);
+            panelUsuario.add(fondoPanelUsuario);
 
             //PANEL CONTENEDOR AÑADE EL PANEL USUARIO
             PanelContenedor.add(panelUsuario, "PanelUsuario");

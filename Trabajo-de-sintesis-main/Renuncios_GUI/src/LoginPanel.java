@@ -11,7 +11,7 @@ public class LoginPanel {
     // FRAME QUE ENMARCA LA PANTALLA DE LOGIN
 
     LoginWindows WindowGui = new LoginWindows();
-//    AppWindow MainAppWindow = new AppWindow();
+//  AppWindow MainAppWindow = new AppWindow();
 
 
 
