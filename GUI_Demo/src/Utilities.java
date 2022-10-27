@@ -24,17 +24,6 @@ public class Utilities {
         button.setContentAreaFilled(false); // No ponemos el contenido del area
         button.setBorderPainted(false); // Seteamos el borde en false
 
-        button.addMouseListener(new MouseAdapter() { // Cambia el color de las letras en el
-            // momento que el raton pasa encima
-            public void mouseEntered(MouseEvent evt) {
-                button.setForeground(Color.decode("#E18700"));
-            }
-
-            public void mouseExited(MouseEvent evt) { // Vuelve al color original una vez el raton se
-                // quita del texto
-                button.setForeground(Color.decode("#A7B5FD"));
-            }
-        });
 
 
         return button;

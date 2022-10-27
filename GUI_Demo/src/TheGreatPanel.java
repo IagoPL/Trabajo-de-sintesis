@@ -17,9 +17,11 @@ public class TheGreatPanel {
 
     //SE CREAN LAS INSTANCIAS DE LOS PANELES
     LoginPanel loginPanel = new LoginPanel();
+    AdminUserPanel adminUserPanel = new AdminUserPanel();
     LimitedUserPanel limitedUserPanel = new LimitedUserPanel();
     AdvertsPanel adsPanel = new AdvertsPanel();
     ContactPanel contactPanel = new ContactPanel();
+
 
     //CREAR EL MANAGER DE PANELES/LAYOUT
     CardLayout cardLayout = new CardLayout();
@@ -34,6 +36,7 @@ public class TheGreatPanel {
 
        // EL GREATPANEL AÑADE LOS OTROS PANELES
        GreatPanel.add(loginPanel.loginPanel, "Login Panel");
+       GreatPanel.add(adminUserPanel.adminUserPanel, "Admin User Panel");
        GreatPanel.add(limitedUserPanel.userPanel,"User Panel");
        GreatPanel.add(adsPanel.adsPanel, "Ads Panel");
        GreatPanel.add(contactPanel.contactPanel, "Contact Panel");
@@ -55,7 +58,7 @@ public class TheGreatPanel {
                     // delay 5 seconds
                     Thread.sleep(500);
                     //call another method in the same class which will close this Jframe
-                    cardLayout.show(GreatPanel, "User Panel");
+                    cardLayout.show(GreatPanel, "Admin User Panel");
 
                 } catch (InterruptedException s) {
                     System.err.format("IOException: %s%n", e);
@@ -90,7 +93,7 @@ public class TheGreatPanel {
         adsPanel.userButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 //call another method in the same class which will close this Jframe
-                cardLayout.show(GreatPanel, "User Panel");
+                cardLayout.show(GreatPanel, "Admin User Panel");
 
             }
         });
@@ -108,7 +111,7 @@ public class TheGreatPanel {
         contactPanel.userButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 //call another method in the same class which will close this Jframe
-                cardLayout.show(GreatPanel, "User Panel");
+                cardLayout.show(GreatPanel, "Admin User Panel");
 
             }
         });
@@ -122,6 +125,25 @@ public class TheGreatPanel {
             }
         });
 
+
+
+        //LISTENER ADMIN USER PANEL adsButton
+        adminUserPanel.adsButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                //call another method in the same class which will close this Jframe
+                cardLayout.show(GreatPanel, "Ads Panel");
+
+            }
+        });
+
+        //LISTENER ADMIN USER PANEL contactButton
+        adminUserPanel.contactButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                //call another method in the same class which will close this Jframe
+                cardLayout.show(GreatPanel, "Contact Panel");
+
+            }
+        });
 
 
 

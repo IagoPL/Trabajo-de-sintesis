@@ -9,7 +9,7 @@ public class ContactPanel {
 
     JPanel contactPanel = new JPanel();
 
-    //SE CREA BOTÓN DE REGISTRO
+    //SE CREAN JTEXTFIELDS
     JTextField straightEmail = new JTextField(20);
     JTextArea straightMessage = new JTextArea(10,10);
 
@@ -33,7 +33,7 @@ public ContactPanel () throws IOException, FontFormatException {
 
 
     //SETEAMOS JTEXTFIELD
-    straightEmail.setBounds(464, 270, 660, 55);
+    straightEmail.setBounds(414, 250, 660, 55);
     straightEmail.setFont(Font.createFont(Font.TRUETYPE_FONT, Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("fonts/Quicksand-Regular.ttf"))));
     straightEmail.setFont(straightEmail.getFont().deriveFont(Font.PLAIN, 25));
     straightEmail.setOpaque(false);
@@ -46,11 +46,10 @@ public ContactPanel () throws IOException, FontFormatException {
 
 
     // SETEAMOS EL JTEXTAREA
-    straightMessage.setBounds(460, 389, 681, 276);
+    straightMessage.setBounds(414, 369, 681, 276);
     straightMessage.setFont(Font.createFont(Font.TRUETYPE_FONT, Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("fonts/Quicksand-Regular.ttf"))));
     straightMessage.setFont(straightEmail.getFont().deriveFont(Font.PLAIN, 25));
     straightMessage.setOpaque(false);
-    straightMessage.setBorder(null);
     straightMessage.setWrapStyleWord(true);
     straightMessage.setLineWrap(true);
 
@@ -61,7 +60,11 @@ public ContactPanel () throws IOException, FontFormatException {
 
     //CREAR BOTONES EN LA FUNCIÓN
 
-    submitButton = crearBotonSubmit(460,676,236,48, "ENVIAR");
+    submitButton.setBounds(460, 659, 236, 48);
+    submitButton.setContentAreaFilled(false);
+    submitButton.setBorder(null);
+
+
 
     userButton = utilities.crearBotonesNavBar(128, 322, 129,47, "USUARIO");
 
