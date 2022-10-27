@@ -1,0 +1,8 @@
+create table REN_EMPRESA
+(
+    ID_USUARIO            NUMBER(5),
+    NOMBRE_EMPRESA        VARCHAR2(15),
+    NOMBRE_ARCHIVO_IMAGEN VARCHAR2(75)
+)
+/
+
