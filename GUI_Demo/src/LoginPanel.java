@@ -25,6 +25,9 @@ public class LoginPanel {
 
     JButton singIn = new JButton();
 
+    //SE CREA NIVEL DE USUARIO
+
+    int userLevel = 0;
 
 
 

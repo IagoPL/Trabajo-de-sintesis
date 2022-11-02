@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -11,7 +13,21 @@ public class AdminUserPanel {
 
     //SE CREA JTABLE
 
-    JTable adminTable  = new JTable();
+        //ARRAY DE DATOS DE LA JTABLE
+
+    //Cabeceras de la Tabla
+     String[] columns = new String[] {
+            "Id", "Empresa",
+     };
+
+     Object [][] datos = new Object[][] {
+             {"01", "Netflix"},
+             {"02", "Mercadona" },
+     };
+
+    JTable adminTable  = new JTable(datos, columns);
+    JScrollPane tableContainer = new JScrollPane(adminTable);
+
 
     //SE CREAN JTEXTFIELDS
 
@@ -25,6 +41,10 @@ public class AdminUserPanel {
     //SE CREAN LOS BOTONES
 
     JButton userInfo = new JButton();
+
+            //VARIABLE PARA MOSTRAR UNA INFO O LA TABLA
+              int numInfo = 1;
+
     JButton buissnesListSection = new JButton();
     JButton adminUserButton = new JButton();
     JButton adsButton = new JButton();
@@ -49,6 +69,21 @@ public class AdminUserPanel {
         infoContainer.setVisible(true);
 
 
+        //JTXTFIELDS
+
+        adminName.setBounds(100, 100, 100,56);
+        adminName.setBackground(Color.DARK_GRAY);
+
+        //JSCROLL PANEL ES EDITADO
+
+        tableContainer.setBounds(0,0,772, 465);
+        tableContainer.setVisible(false);
+
+
+
+
+
+
 
         //LLAMAMOS LOS BOTONES PERTINENTES
 
@@ -60,13 +95,31 @@ public class AdminUserPanel {
 
         userInfo.setBounds(358, 169, 372,57);
         userInfo.setContentAreaFilled(false);
-        userInfo.setBorderPainted(true);
+        userInfo.setBorderPainted(false);
+        //LISTENER USER PANEL adsButton
+        userInfo.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                //call another method in the same class which will close this Jframe
+                tableContainer.setVisible(false);
+
+            }
+        });
 
 
 
         buissnesListSection.setBounds(744, 169, 372,57);
-        buissnesListSection.setOpaque(false);
-        buissnesListSection.setBorderPainted(true);
+        buissnesListSection.setContentAreaFilled(false);
+        buissnesListSection.setBorderPainted(false);
+        buissnesListSection.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                //call another method in the same class which will close this Jframe
+                tableContainer.setVisible(true);
+
+
+
+            }
+        });
+
 
 
         adminUserPanelBackground.add(adminUserButton);
@@ -74,6 +127,8 @@ public class AdminUserPanel {
         adminUserPanelBackground.add(contactButton);
         adminUserPanelBackground.add(userInfo);
         adminUserPanelBackground.add(buissnesListSection);
+        infoContainer.add(tableContainer);
+        infoContainer.add(adminName);
         adminUserPanelBackground.add(infoContainer);
         adminUserPanel.add(adminUserPanelBackground);
 

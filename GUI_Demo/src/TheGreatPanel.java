@@ -27,6 +27,8 @@ public class TheGreatPanel {
     CardLayout cardLayout = new CardLayout();
 
 
+
+
     public TheGreatPanel() throws IOException, FontFormatException {
 
         // SE ESTABLECE EL TIPO DE LAYOUT EN EL PANEL DE CONTENIDO
@@ -50,24 +52,15 @@ public class TheGreatPanel {
         loginPanel.singIn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
-                loginPanel.bevLoader.setVisible(true);
-                loginPanel.fondoPanelLogin.setVisible(false);
+                if (loginPanel.userLevel == 0) {
 
-                try {
-
-                    // delay 5 seconds
-                    Thread.sleep(500);
-                    //call another method in the same class which will close this Jframe
                     cardLayout.show(GreatPanel, "Admin User Panel");
+                } else {
+                    cardLayout.show(GreatPanel, "User Panel");
 
-                } catch (InterruptedException s) {
-                    System.err.format("IOException: %s%n", e);
                 }
 
-
             }
-
-
 
         });
 
