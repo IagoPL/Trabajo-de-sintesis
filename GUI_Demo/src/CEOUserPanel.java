@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Objects;
 
-public class AdminUserPanel {
+public class CEOUserPanel {
 
     //SE CREA JPANEL
 
@@ -55,7 +55,7 @@ public class AdminUserPanel {
 
     Utilities utilities = new Utilities();
 
-    public AdminUserPanel() throws IOException, FontFormatException {
+    public CEOUserPanel() throws IOException, FontFormatException {
 
         //JLABEL PARA ESTABLECER IMAGEN DE FONDO
         JLabel adminUserPanelBackground = new JLabel(
@@ -73,7 +73,7 @@ public class AdminUserPanel {
         //JTXTFIELDS
 
         adminName.setBounds(100, 100, 100,56);
-        adminName.setVisible(false);
+        adminName.setBackground(Color.DARK_GRAY);
 
         //JSCROLL PANEL ES EDITADO
 
