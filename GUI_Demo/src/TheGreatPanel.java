@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.io.IOException;
 
 
@@ -20,7 +19,10 @@ public class TheGreatPanel {
     AdminUserPanel adminUserPanel = new AdminUserPanel();
     LimitedUserPanel limitedUserPanel = new LimitedUserPanel();
     AdvertsPanel adsPanel = new AdvertsPanel();
+    AdvertInformationPanel adsInfoPanel = new AdvertInformationPanel();
     ContactPanel contactPanel = new ContactPanel();
+
+
 
 
     //CREAR EL MANAGER DE PANELES/LAYOUT
@@ -42,6 +44,7 @@ public class TheGreatPanel {
        GreatPanel.add(limitedUserPanel.userPanel,"User Panel");
        GreatPanel.add(adsPanel.adsPanel, "Ads Panel");
        GreatPanel.add(contactPanel.contactPanel, "Contact Panel");
+       GreatPanel.add(adsInfoPanel.adsPanelInfo,"Ads Info");
         Window.add(GreatPanel);
 
 
@@ -137,6 +140,46 @@ public class TheGreatPanel {
 
             }
         });
+
+        //LISTENER ADS PANEL ADD1
+        adsPanel.add1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                //call another method in the same class which will close this Jframe
+                cardLayout.show(GreatPanel, "Ads Info");
+
+            }
+        });
+
+        //LISTENER ADS PANEL ADD1
+        adsPanel.add2.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                //call another method in the same class which will close this Jframe
+                cardLayout.show(GreatPanel, "Ads Info");
+
+            }
+        });
+
+        //LISTENER ADS PANEL ADD1
+        adsPanel.add3.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                //call another method in the same class which will close this Jframe
+                cardLayout.show(GreatPanel, "Ads Info");
+
+            }
+        });
+
+        //LISTENER ADS PANEL userButton
+        adsInfoPanel.pageBackButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                //call another method in the same class which will close this Jframe
+                cardLayout.show(GreatPanel, "Ads Panel");
+
+            }
+        });
+
 
 
 

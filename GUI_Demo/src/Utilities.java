@@ -23,6 +23,7 @@ public class Utilities {
         button.setOpaque(true); // No lo ponemos opaco
         button.setContentAreaFilled(false); // No ponemos el contenido del area
         button.setBorderPainted(false); // Seteamos el borde en false
+        button.setFocusable(false);
 
 
 
@@ -46,6 +47,7 @@ public class Utilities {
         button.setOpaque(true); // No lo ponemos opaco
         button.setContentAreaFilled(false); // No ponemos el contenido del area
         button.setBorderPainted(false); // Seteamos el borde en false
+        button.setFocusable(false);
 
         button.addMouseListener(new MouseAdapter() { // Cambia el color de las letras en el
             // momento que el raton pasa encima
@@ -63,4 +65,30 @@ public class Utilities {
         return button;
 
     }
+
+    public JLabel crearLabelParaPaneles (int x, int y, int width, int height, String text)
+            throws IOException, FontFormatException {
+
+        JLabel label = new JLabel(text); // Texto
+        label.setFont(
+                Font.createFont(Font.TRUETYPE_FONT, Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("fonts/BebasNeue-Regular.ttf")))); // Añadimos
+        // fuente
+        // personalizada
+
+        label.setFont(label.getFont().deriveFont(Font.PLAIN, 48)); // Añadimos el tamaño de la fuente
+        label.setBounds(x, y, width, height);// Se establece su posición y tamaño
+        label.setBackground(null);
+        label.setForeground(Color.BLACK); // Color del texto
+        label.setBorder(null); // Seteamos el borde a null
+        label.setOpaque(true); // No lo ponemos opaco
+        label.setFocusable(false);
+
+
+
+
+        return label;
+
+    }
+
+
 }

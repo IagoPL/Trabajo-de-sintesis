@@ -19,24 +19,48 @@ public class AdminUserPanel {
      String[] columns = new String[] {
             "Id", "Empresa",
      };
+    double posY = -59;
+
 
      Object [][] datos = new Object[][] {
              {"01", "Netflix"},
              {"02", "Mercadona" },
+             {"02", "Mercadona" },
+             {"02", "Mercadona" },
+             {"02", "Mercadona" },
+             {"02", "Mercadona" },
+             {"02", "Mercadona" },
+             {"02", "Mercadona" },
+
+
+
 
      };
 
-    JTable adminTable  = new JTable(datos, columns);
-    JScrollPane tableContainer = new JScrollPane(adminTable);
+    //JTable adminTable  = new JTable(datos, columns);
+    JLabel listaEmpresas = new JLabel();
+
+    JPanel bussinesPanelContainer = new JPanel ();
+
+    JList businessJList = new JList();
+    JScrollPane tableContainer = new JScrollPane();
+
+
 
 
     //SE CREAN JTEXTFIELDS
 
-    JTextField adminName = new JTextField(10);
-    JTextField adminID = new JTextField(10);
-    JTextField adminNumber = new JTextField(10);
-    JTextField adminEmail = new JTextField(10);
-    JTextField adminTotalAds = new JTextField(10);
+    JLabel adminName = new JLabel();
+    JLabel adminID = new JLabel();
+    JLabel adminNumber = new JLabel();
+    JLabel adminEmail = new JLabel();
+    JLabel adminTotalAds = new JLabel();
+
+    JLabel adminNameTitle = new JLabel("NOMBRE: ");
+    JLabel adminIDTitle = new JLabel("ID: ");
+    JLabel adminNumberTitle = new JLabel("TELÉFONO: ");
+    JLabel adminEmailTitle = new JLabel("CORREO: ");
+    JLabel adminTotalAdsTitle = new JLabel("ANUNCIOS TOTALES: ");
 
 
     //SE CREAN LOS BOTONES
@@ -70,19 +94,63 @@ public class AdminUserPanel {
         infoContainer.setVisible(true);
 
 
-        //JTXTFIELDS
+        //JLABELS TITLE
 
-        adminName.setBounds(100, 100, 100,56);
-        adminName.setVisible(false);
+
+        adminNameTitle = utilities.crearLabelParaPaneles(60, 40, 150,56, "NOMBRE:");
+
+        adminIDTitle = utilities.crearLabelParaPaneles(60, 104, 100, 56, "ID:");
+
+        adminNumberTitle = utilities.crearLabelParaPaneles(60, 168, 170,56, "TELÉFONO:");
+
+        adminEmailTitle = utilities.crearLabelParaPaneles(60, 232, 160,56, "CORREO:");
+
+        adminTotalAdsTitle = utilities.crearLabelParaPaneles(60, 296, 300,56, "ANUNCIOS TOTALES:");
+
+
 
         //JSCROLL PANEL ES EDITADO
 
+
+
+
+
+
+        for (int i = 0; i < datos.length; i++ ) {
+
+
+           listaEmpresas = new JLabel("Netflix", SwingConstants.CENTER);
+            listaEmpresas.setFont(
+                    Font.createFont(Font.TRUETYPE_FONT, Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("fonts/BebasNeue-Regular.ttf")))); // Añadimos
+            // fuente
+            // personalizada
+            listaEmpresas.setFont(listaEmpresas.getFont().deriveFont(Font.PLAIN, 48)); // Añadimos el tamaño de la fuente
+            listaEmpresas.setVisible(true);
+            listaEmpresas.setOpaque(true);
+            listaEmpresas.setBorder(BorderFactory.createRaisedSoftBevelBorder());
+            listaEmpresas.setBackground(Color.decode("#D2D9FE"));
+            listaEmpresas.setLayout(null);
+
+
+
+           listaEmpresas.setBounds((int) -1.8, (int) (posY + 59), 773, 56);
+           posY = posY + 58;
+
+
+           tableContainer.add(listaEmpresas);
+
+
+        }
+
         tableContainer.setBounds(0,0,772, 465);
+        //tableContainer.setLayout(new ScrollPaneLayout());
+        tableContainer.setLayout(null);
         tableContainer.setVisible(false);
 
 
-
-
+       // bussinesPanelContainer.setBackground(Color.ORANGE);
+        // bussinesPanelContainer.setVisible(true);
+       // tableContainer.add(bussinesPanelContainer);
 
 
 
@@ -129,7 +197,11 @@ public class AdminUserPanel {
         adminUserPanelBackground.add(userInfo);
         adminUserPanelBackground.add(buissnesListSection);
         infoContainer.add(tableContainer);
-        infoContainer.add(adminName);
+        infoContainer.add(adminNameTitle);
+        infoContainer.add(adminIDTitle);
+        infoContainer.add(adminNumberTitle);
+        infoContainer.add(adminEmailTitle);
+        infoContainer.add(adminTotalAdsTitle);
         adminUserPanelBackground.add(infoContainer);
         adminUserPanel.add(adminUserPanelBackground);
 
