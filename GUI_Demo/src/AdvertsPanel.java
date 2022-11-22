@@ -34,6 +34,12 @@ public class AdvertsPanel {
     JLabel add2C = new JLabel();
     JLabel add3C = new JLabel();
 
+    //CREAR BOTÓN DE TOOLPIT
+
+    JButton newAdd = new JButton();
+
+
+
 
 
 
@@ -87,6 +93,15 @@ public class AdvertsPanel {
         add3C.setBounds(875, 509, 139, 202);
         add3C.setBackground(Color.lightGray);
         add3C.setOpaque(true);
+
+        //BOTÓN DE CREACIÓN DE NUEVOS ANUNCIOS
+
+        newAdd.setBounds(1068, 24, 55,55 );
+        newAdd.setToolTipText("Añadir Nuevo Anuncio");
+        newAdd.setContentAreaFilled(false);
+        newAdd.setFocusable(false);
+        newAdd.setBorder(null);
+        newAdd.setVisible(true);
         //SE AÑADEN LOS LABELS Y BOTONES AL PANEL
 
         fondoPanelAds.add(add1);
