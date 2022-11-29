@@ -27,7 +27,7 @@ public class LoginPanel {
 
     //SE CREA NIVEL DE USUARIO
 
-    int userLevel = 0;
+    int userLevel = 2;
 
 
 

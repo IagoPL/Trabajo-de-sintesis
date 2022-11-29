@@ -9,7 +9,7 @@ public class CEOUserPanel {
 
     //SE CREA JPANEL
 
-    JPanel adminUserPanel = new JPanel();
+    JPanel ceoUserPanel = new JPanel();
 
     //SE CREA JTABLE
 
@@ -26,8 +26,8 @@ public class CEOUserPanel {
 
      };
 
-    JTable adminTable  = new JTable(datos, columns);
-    JScrollPane tableContainer = new JScrollPane(adminTable);
+    JTable ceoTable  = new JTable(datos, columns);
+    JScrollPane tableContainer = new JScrollPane(ceoTable);
 
 
     //SE CREAN JTEXTFIELDS
@@ -50,10 +50,14 @@ public class CEOUserPanel {
     JButton adminUserButton = new JButton();
     JButton adsButton = new JButton();
     JButton contactButton = new JButton();
+    JButton requestNewUser = new JButton();
 
-    //Instancia Utlities
+
+    //INSTANCIA UTILITIES
 
     Utilities utilities = new Utilities();
+
+    //INSTANCIA UTILITIES
 
     public CEOUserPanel() throws IOException, FontFormatException {
 
@@ -131,7 +135,7 @@ public class CEOUserPanel {
         infoContainer.add(tableContainer);
         infoContainer.add(adminName);
         adminUserPanelBackground.add(infoContainer);
-        adminUserPanel.add(adminUserPanelBackground);
+        ceoUserPanel.add(adminUserPanelBackground);
 
 
 

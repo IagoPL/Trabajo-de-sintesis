@@ -113,6 +113,7 @@ public class AdvertsPanel {
         fondoPanelAds.add(userButton);
         fondoPanelAds.add(adsButtons);
         fondoPanelAds.add(contactButton);
+        fondoPanelAds.add(newAdd);
 
 
         adsPanel.add(fondoPanelAds);
