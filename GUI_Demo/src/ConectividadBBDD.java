@@ -23,6 +23,7 @@ public class ConectividadBBDD {
             return null;
         }
     }
+
     public LinkedList<String> query (String from){
         try{
             Statement st = conn();
