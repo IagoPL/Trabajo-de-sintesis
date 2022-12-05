@@ -22,6 +22,7 @@ public class TheGreatPanel {
     AdvertsPanel adsPanel = new AdvertsPanel();
     AdvertInformationPanel adsInfoPanel = new AdvertInformationPanel();
     ContactPanel contactPanel = new ContactPanel();
+    ContractAddPanel contractAddPanel = new ContractAddPanel();
 
 
 
@@ -43,11 +44,12 @@ public class TheGreatPanel {
 
        GreatPanel.add(loginPanel.loginPanel, "Login Panel");
        GreatPanel.add(adminUserPanel.adminUserPanel, "Admin User Panel");
-        GreatPanel.add(ceoUserPanel.ceoUserPanel, "Ceo User Panel");
+       GreatPanel.add(ceoUserPanel.ceoUserPanel, "Ceo User Panel");
        GreatPanel.add(limitedUserPanel.userPanel,"User Panel");
        GreatPanel.add(adsPanel.adsPanel, "Ads Panel");
        GreatPanel.add(contactPanel.contactPanel, "Contact Panel");
        GreatPanel.add(adsInfoPanel.adsPanelInfo,"Ads Info");
+       GreatPanel.add(contractAddPanel.contractAddPanel,"Contract Add Panel");
         Window.add(GreatPanel);
 
 
@@ -219,6 +221,16 @@ public class TheGreatPanel {
             public void mouseClicked(MouseEvent e) {
                 //call another method in the same class which will close this Jframe
                 cardLayout.show(GreatPanel, "Ads Info");
+
+            }
+        });
+
+        //LISTENER ADS PANEL newAdd
+        adsPanel.newAdd.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                //call another method in the same class which will close this Jframe
+                cardLayout.show(GreatPanel, "Contract Add Panel");
 
             }
         });
