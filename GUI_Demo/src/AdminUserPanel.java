@@ -107,7 +107,17 @@ public class AdminUserPanel {
 
         adminTotalAdsTitle = utilities.crearLabelParaPaneles(60, 296, 300,56, "ANUNCIOS TOTALES:");
 
+        //JLABELS DÓNDE COLOCAR LA INFORMACIÓN DE LOS USUARIOS
 
+        adminName = utilities.crearLabelParaPanelesDeInfoDeUsuario(210, 40, 150,56, "");
+
+        adminID = utilities.crearLabelParaPanelesDeInfoDeUsuario(160, 104, 100, 56, "");
+
+        adminNumber = utilities.crearLabelParaPanelesDeInfoDeUsuario(230, 168, 170,56, "");
+
+        adminEmail = utilities.crearLabelParaPanelesDeInfoDeUsuario(220, 232, 160,56, "");
+
+        adminTotalAds = utilities.crearLabelParaPanelesDeInfoDeUsuario(360, 296, 300,56, "");
 
         //JSCROLL PANEL ES EDITADO
 
@@ -148,11 +158,6 @@ public class AdminUserPanel {
         tableContainer.setVisible(false);
 
 
-       // bussinesPanelContainer.setBackground(Color.ORANGE);
-        // bussinesPanelContainer.setVisible(true);
-       // tableContainer.add(bussinesPanelContainer);
-
-
 
         //LLAMAMOS LOS BOTONES PERTINENTES
 
@@ -165,6 +170,7 @@ public class AdminUserPanel {
         userInfo.setBounds(358, 169, 372,57);
         userInfo.setContentAreaFilled(false);
         userInfo.setBorderPainted(false);
+
         //LISTENER USER PANEL adsButton
         userInfo.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -179,6 +185,7 @@ public class AdminUserPanel {
         buissnesListSection.setBounds(744, 169, 372,57);
         buissnesListSection.setContentAreaFilled(false);
         buissnesListSection.setBorderPainted(false);
+
         buissnesListSection.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 //call another method in the same class which will close this Jframe
@@ -202,6 +209,13 @@ public class AdminUserPanel {
         infoContainer.add(adminNumberTitle);
         infoContainer.add(adminEmailTitle);
         infoContainer.add(adminTotalAdsTitle);
+
+        infoContainer.add(adminName);
+        infoContainer.add(adminID);
+        infoContainer.add(adminNumber);
+        infoContainer.add(adminEmail);
+        infoContainer.add(adminTotalAds);
+
         adminUserPanelBackground.add(infoContainer);
         adminUserPanel.add(adminUserPanelBackground);
 
