@@ -48,7 +48,7 @@ public class AdvertsPanel {
 
         //JLABEL PARA ESTABLECER IMAGEN DE FONDO
         JLabel fondoPanelAds = new JLabel(
-                new ImageIcon(Objects.requireNonNull(getClass().getResource("images/Fondo_Anuncios-admin.png"))));
+                new ImageIcon(Objects.requireNonNull(getClass().getResource("images/Fondo_Anuncios.png"))));
 
         fondoPanelAds.setLayout(null);// Ningun Layout en Especial
 

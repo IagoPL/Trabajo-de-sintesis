@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -11,39 +13,16 @@ public class AdminUserPanel {
 
     JPanel adminUserPanel = new JPanel();
 
-    //SE CREA JTABLE
-
-        //ARRAY DE DATOS DE LA JTABLE
-
-    //Cabeceras de la Tabla
-     String[] columns = new String[] {
-            "Id", "Empresa",
-     };
     double posY = -59;
 
-
-     Object [][] datos = new Object[][] {
-             {"01", "Netflix"},
-             {"02", "Mercadona" },
-             {"02", "Mercadona" },
-             {"02", "Mercadona" },
-             {"02", "Mercadona" },
-             {"02", "Mercadona" },
-             {"02", "Mercadona" },
-             {"02", "Mercadona" },
-
-
-
-
-     };
-
-    //JTable adminTable  = new JTable(datos, columns);
     JLabel listaEmpresas = new JLabel();
 
     JPanel bussinesPanelContainer = new JPanel ();
 
     JList businessJList = new JList();
     JScrollPane tableContainer = new JScrollPane();
+
+
 
 
 
@@ -61,6 +40,8 @@ public class AdminUserPanel {
     JLabel adminNumberTitle = new JLabel("TELÉFONO: ");
     JLabel adminEmailTitle = new JLabel("CORREO: ");
     JLabel adminTotalAdsTitle = new JLabel("ANUNCIOS TOTALES: ");
+
+
 
 
     //SE CREAN LOS BOTONES
@@ -83,7 +64,7 @@ public class AdminUserPanel {
 
         //JLABEL PARA ESTABLECER IMAGEN DE FONDO
         JLabel adminUserPanelBackground = new JLabel(
-                new ImageIcon(Objects.requireNonNull(getClass().getResource("images/Fondo_Usuario_Admin.png"))));
+                new ImageIcon(Objects.requireNonNull(getClass().getResource("images/Fondo_UsuarioCompleto.png"))));
 
         //JLABEL REDUCIDO PARA CONTENER DISTINTOS TIPOS DE INFORMACIÓN, TAMBIÉN LO CARACTERIZAMOS
         JLabel infoContainer = new JLabel();
@@ -116,7 +97,7 @@ public class AdminUserPanel {
 
 
 
-        for (int i = 0; i < datos.length; i++ ) {
+        for (int i = 0; i < 8; i++ ) {
 
 
            listaEmpresas = new JLabel("Netflix", SwingConstants.CENTER);
@@ -135,6 +116,7 @@ public class AdminUserPanel {
 
            listaEmpresas.setBounds((int) -1.8, (int) (posY + 59), 773, 56);
            posY = posY + 58;
+
 
 
            tableContainer.add(listaEmpresas);
