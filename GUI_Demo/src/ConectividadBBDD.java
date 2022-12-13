@@ -1,5 +1,6 @@
 
 
+import javax.swing.*;
 import java.sql.*;
 import java.sql.DriverManager;
 import java.util.LinkedList;
@@ -8,73 +9,42 @@ import java.util.logging.Logger;
 
 public class ConectividadBBDD {
 
-    public ConectividadBBDD() {
-    }
-    public Statement conn(){
-        try{
-            DriverManager.registerDriver(new OracleDriver());
-            System.out.println("Conectando con la base de datos...");
-            Connection connection = DriverManager.getConnection(
-                    "jdbc:oracle:thin:@192.168.3.26:1521:XE", "22_23_DAW_BEV","123456");
-            Statement statement = connection.createStatement();
-            return statement;
-        }catch(Exception e){
-            System.out.println("The exception raised is:" + e);
-            return null;
-        }
-    }
+    private static Connection conn = null;
+    private static String login = "22_23_DAW_BEV";
+    private static String clave = "123456";
+    private static String urlIlerna = "jdbc:oracle:thin:@192.168.3.26:1521:XE";
+    private static String urlGlobal = "jdbc:oracle:thin:@oracle.ilerna.com:1521:XE";
 
-    public LinkedList<String> query (String from){
-        try{
-            Statement st = conn();
-            ResultSet resultSet = st.executeQuery(from);
+    public static Connection getConnection() {
 
-            LinkedList<String> result = new LinkedList();
-            while(resultSet.next()){
-                for(int i=1;i< resultSet.getMetaData().getColumnCount(); i++){
-                    result.add(resultSet.getString(i));
-                }
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            conn = DriverManager.getConnection(urlIlerna, login, clave);
+            conn.setAutoCommit(false);
+            if (conn != null) {
+                System.out.println("Conexion exitosa");
+            } else {
+                System.out.println("Conexion fallida");
             }
-            return result;
-        }catch (Exception e){
-            return null;
+
+        } catch (ClassNotFoundException | SQLException e) {
+            JOptionPane.showMessageDialog(null,"conexion fallida");
+        }
+        return conn;
+    }
+
+    public void desconexion(){
+        try{
+            conn.close();
+
+        }catch (Exception e ){
+            System.out.println("error al desconectar");
         }
     }
 
-    private class OracleDriver implements Driver {
-        @Override
-        public Connection connect(String url, Properties info) throws SQLException {
-            return null;
-        }
 
-        @Override
-        public boolean acceptsURL(String url) throws SQLException {
-            return false;
-        }
-
-        @Override
-        public DriverPropertyInfo[] getPropertyInfo(String url, Properties info) throws SQLException {
-            return new DriverPropertyInfo[0];
-        }
-
-        @Override
-        public int getMajorVersion() {
-            return 0;
-        }
-
-        @Override
-        public int getMinorVersion() {
-            return 0;
-        }
-
-        @Override
-        public boolean jdbcCompliant() {
-            return false;
-        }
-
-        @Override
-        public Logger getParentLogger() throws SQLFeatureNotSupportedException {
-            return null;
-        }
+    public PreparedStatement PreparedStatement(String scriptSql) {
+//    TODO: hacer algo aqui
+        return null;
     }
 }
