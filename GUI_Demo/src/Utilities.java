@@ -90,6 +90,30 @@ public class Utilities {
 
     }
 
+    public JLabel crearLabelParaPanelesDeInfoDeUsuario (int x, int y, int width, int height, String text)
+            throws IOException, FontFormatException {
+
+        JLabel label = new JLabel(text); // Texto
+        label.setFont(
+                Font.createFont(Font.TRUETYPE_FONT, Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("fonts/BebasNeue-Regular.ttf")))); // Añadimos
+        // fuente
+        // personalizada
+
+        label.setFont(label.getFont().deriveFont(Font.PLAIN, 48)); // Añadimos el tamaño de la fuente
+        label.setBounds(x, y, width, height);// Se establece su posición y tamaño
+        label.setBackground(null);
+        label.setForeground(Color.BLACK); // Color del texto
+        label.setBorder(null); // Seteamos el bworde a null
+        label.setOpaque(true); // No lo ponemos opaco
+        label.setFocusable(false);
+
+
+
+
+        return label;
+
+    }
+
 
 
 

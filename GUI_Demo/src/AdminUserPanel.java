@@ -56,6 +56,8 @@ public class AdminUserPanel {
     JButton adsButton = new JButton();
     JButton contactButton = new JButton();
 
+    JButton createUserButton = new JButton();
+
     //Instancia Utlities
 
     Utilities utilities = new Utilities();
@@ -64,7 +66,7 @@ public class AdminUserPanel {
 
         //JLABEL PARA ESTABLECER IMAGEN DE FONDO
         JLabel adminUserPanelBackground = new JLabel(
-                new ImageIcon(Objects.requireNonNull(getClass().getResource("images/Fondo_UsuarioCompleto.png"))));
+                new ImageIcon(Objects.requireNonNull(getClass().getResource("images/Fondo_UsuarioAdmin.png"))));
 
         //JLABEL REDUCIDO PARA CONTENER DISTINTOS TIPOS DE INFORMACIÓN, TAMBIÉN LO CARACTERIZAMOS
         JLabel infoContainer = new JLabel();
@@ -178,6 +180,27 @@ public class AdminUserPanel {
             }
         });
 
+        createUserButton.setBounds(1055, (int) 19.5, 58, 54);
+        createUserButton.setVisible(true);
+        createUserButton.setContentAreaFilled(false);
+        createUserButton.setToolTipText("Solicitar Nuevo Usuario");
+
+
+
+
+
+        createUserButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                //call another method in the same class which will close this Jframe
+                String idUser = JOptionPane.showInputDialog("Introduce ID del trabajador");
+                String emailUser = JOptionPane.showInputDialog("Introduce Correo del Usuario");
+                int levelUser = Integer.parseInt(JOptionPane.showInputDialog("Introduce Nivel de Acceso"));
+
+
+
+            }
+        });
+
 
 
         adminUserPanelBackground.add(adminUserButton);
@@ -185,6 +208,7 @@ public class AdminUserPanel {
         adminUserPanelBackground.add(contactButton);
         adminUserPanelBackground.add(userInfo);
         adminUserPanelBackground.add(buissnesListSection);
+        adminUserPanelBackground.add(createUserButton);
         infoContainer.add(tableContainer);
         infoContainer.add(adminNameTitle);
         infoContainer.add(adminIDTitle);

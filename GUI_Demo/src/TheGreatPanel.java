@@ -23,6 +23,8 @@ public class TheGreatPanel {
     AdvertInformationPanel adsInfoPanel = new AdvertInformationPanel();
     ContactPanel contactPanel = new ContactPanel();
     ContractAddPanel contractAddPanel = new ContractAddPanel();
+    BuyFlyerPanel buyFlyerPanel = new BuyFlyerPanel();
+    BuyWebAddPanel buyWebAddPanel = new BuyWebAddPanel();
     UserListByBuissnesPanel userListByBuissnesPanel = new UserListByBuissnesPanel();
 
 
@@ -51,6 +53,8 @@ public class TheGreatPanel {
        GreatPanel.add(adsInfoPanel.adsPanelInfo,"Ads Info");
        GreatPanel.add(contractAddPanel.contractAddPanel,"Contract Add Panel");
        GreatPanel.add(userListByBuissnesPanel.userListPanel, "User List Panel");
+       GreatPanel.add(buyFlyerPanel.buyFlyerPanel, "Buy Flyer Panel");
+       GreatPanel.add(buyWebAddPanel.buyWebAddPanel, "Buy Web Panel");
         Window.add(GreatPanel);
 
 
@@ -241,6 +245,24 @@ public class TheGreatPanel {
             public void actionPerformed(ActionEvent e) {
                 //call another method in the same class which will close this Jframe
                 cardLayout.show(GreatPanel, "Ads Panel");
+
+            }
+        });
+
+        //LISTENER ADS INFORMATION PANEL userButton
+        contractAddPanel.flyerAddButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                //call another method in the same class which will close this Jframe
+                cardLayout.show(GreatPanel, "Buy Flyer Panel");
+
+            }
+        });
+
+        //LISTENER ADS INFORMATION PANEL userButton
+        contractAddPanel.webAddButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                //call another method in the same class which will close this Jframe
+                cardLayout.show(GreatPanel, "Buy Web Panel");
 
             }
         });
