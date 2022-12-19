@@ -1,8 +1,22 @@
 public class bo {
 
     private String mensaje;
+    private Crud UserCrud = new Crud();
 
-    public String add(DDBBUsuarios value, String column) {
+    public String add(DDBBUsuarios value) {
+
+        ConectividadBBDD conn = (ConectividadBBDD) ConectividadBBDD.getConnection();
+        try {
+            mensaje = UserCrud.add(conn, value);
+
+        } catch (Exception e) {
+            mensaje = mensaje + " " + e.getMessage();
+        }finally {
+            if (conn != null){
+
+            }
+        }
+
         return mensaje;
     }
 
@@ -15,6 +29,6 @@ public class bo {
     }
 
     public void show(String column) {
-        
+
     }
 }
