@@ -1,27 +1,21 @@
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class UserCrud {
     private String mensaje;
 
     public String add(ConectividadBBDD con, DDBBUsuarios value) {
-        PreparedStatement pst = null;
 
         String scriptSql = "insert into USUARIO " +
                 "(ID_USUARIO, NOMBRE, APELLIDOS, CONTRASENA, EMPRESA, NICK, NIVEL)" +
-                " values (SEQUENCE_USUARIO.nextcal, ?,?,?,?,?,? )";
-
+                " values (SEQUENCE_USUARIO.nextval,'" + value.getNombre() + "', '" + value.getApellidos() + "', '" + value.getContrasena() + "' , " + value.getEmpresa() + ", '" + value.getNick() + "', " + value.getNivel() + ")";
+        System.out.println(scriptSql);
 
         try {
-            pst = con.PreparedStatement(scriptSql);
-            pst.setString(1, value.getNombre());
-            pst.setString(2, value.getApellidos());
-            pst.setString(3, value.getContrasena());
-            pst.setInt(4, value.getEmpresa());
-            pst.setString(5, value.getNick());
-            pst.setInt(6, value.getNivel());
+            Statement pst = con.getConn().createStatement();
             mensaje = "guardadp correctamente";
-            pst.execute();
+            pst.execute(scriptSql);
             pst.close();
 
         } catch (SQLException e) {

@@ -5,7 +5,8 @@ public class UserBo {
 
     public String add(DDBBUsuarios value) {
 
-        ConectividadBBDD conn = (ConectividadBBDD) ConectividadBBDD.getConnection();
+        ConectividadBBDD conn = new ConectividadBBDD();
+        conn.getConnection();
         try {
             mensaje = UserCrud.add(conn, value);
 
@@ -27,7 +28,7 @@ public class UserBo {
     }
 
     public String delete(int id) {
-        ConectividadBBDD conn = (ConectividadBBDD) ConectividadBBDD.getConnection();
+        /*ConectividadBBDD conn = (ConectividadBBDD) ConectividadBBDD.getConnection();
         try {
             mensaje = UserCrud.delete(conn, id);
 
@@ -45,11 +46,12 @@ public class UserBo {
 
         }
 
-        return mensaje;
+        return mensaje;*/
+        return null;
     }
 
     public String edit(DDBBUsuarios value)  {
-        ConectividadBBDD conn = (ConectividadBBDD) ConectividadBBDD.getConnection();
+        /*ConectividadBBDD conn = (ConectividadBBDD) ConectividadBBDD.getConnection();
         try {
             mensaje = UserCrud.edit(conn, value);
 
@@ -67,7 +69,8 @@ public class UserBo {
 
         }
 
-        return mensaje;
+        return mensaje;*/
+        return  null;
     }
 
     public void show(String column) {

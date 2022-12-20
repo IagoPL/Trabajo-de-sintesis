@@ -5,7 +5,7 @@ public class Test {
 
     public void insertar() {
         user.setApellidos("lujano");
-        user.setContrasena("perrito1234");
+        user.setContrasena("perrito124");
         user.setEmpresa(123);
         user.setNick("el yoya");
         user.setNombre("holu");
