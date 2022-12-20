@@ -267,6 +267,17 @@ public class TheGreatPanel {
             }
         });
 
+
+
+        //LISTENER ADS INFORMATION PANEL userButton
+        contractAddPanel.contrarAddPanelMarchaAtras.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                //call another method in the same class which will close this Jframe
+                cardLayout.show(GreatPanel, "Ads Panel");
+
+            }
+        });
+
         //LISTENER ADMIN USER PANEL listaEmpresas
         adminUserPanel.listaEmpresas.addMouseListener(new MouseAdapter() {
             @Override

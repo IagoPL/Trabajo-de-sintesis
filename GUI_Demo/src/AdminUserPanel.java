@@ -13,6 +13,8 @@ public class AdminUserPanel {
 
     JPanel adminUserPanel = new JPanel();
 
+
+
     double posY = -59;
 
     JLabel listaEmpresas = new JLabel();
@@ -22,8 +24,21 @@ public class AdminUserPanel {
     JList businessJList = new JList();
     JScrollPane tableContainer = new JScrollPane();
 
+    String NombreTrabajadores [] = {"Ángel Petro", "Alba Ortiz", "Nerea Baixu", "Gabriel Pilluán", "Oriol Vallverda", "Santiago Gallardo", "Andrea Gonzalez", "Albert Dalmar",
+                                    " Núria Roca", "Iratxe Muriana", "Matías Cayetano", "Iván Prim", "Alma Estrada", "Adoració Norteny", "José Martín Juez", "María Lago" };
 
 
+
+    //SE CREAN JLABELS PARA LA LOSTA DE TRABAJADORES
+
+    JLabel label1 = new JLabel();
+    JLabel label2 = new JLabel();
+    JLabel label3 = new JLabel();
+    JLabel label4 = new JLabel();
+    JLabel label5 = new JLabel();
+    JLabel label6 = new JLabel();
+    JLabel label7 = new JLabel();
+    JLabel label8 = new JLabel();
 
 
 
@@ -57,7 +72,8 @@ public class AdminUserPanel {
     JButton contactButton = new JButton();
 
     JButton createUserButton = new JButton();
-
+    JButton adelante = new JButton();
+    JButton atras = new JButton();
     //Instancia Utlities
 
     Utilities utilities = new Utilities();
@@ -102,39 +118,11 @@ public class AdminUserPanel {
 
         adminTotalAds = utilities.crearLabelParaPanelesDeInfoDeUsuario(360, 296, 300,56, "");
 
-        //JSCROLL PANEL ES EDITADO
+        //JLABEL PANEL ES EDITADO
 
 
 
 
-
-
-        for (int i = 0; i < 8; i++ ) {
-
-
-           listaEmpresas = new JLabel("Netflix", SwingConstants.CENTER);
-            listaEmpresas.setFont(
-                    Font.createFont(Font.TRUETYPE_FONT, Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("fonts/BebasNeue-Regular.ttf")))); // Añadimos
-            // fuente
-            // personalizada
-            listaEmpresas.setFont(listaEmpresas.getFont().deriveFont(Font.PLAIN, 48)); // Añadimos el tamaño de la fuente
-            listaEmpresas.setVisible(true);
-            listaEmpresas.setOpaque(true);
-            listaEmpresas.setBorder(BorderFactory.createRaisedSoftBevelBorder());
-            listaEmpresas.setBackground(Color.decode("#D2D9FE"));
-            listaEmpresas.setLayout(null);
-
-
-
-           listaEmpresas.setBounds((int) -1.8, (int) (posY + 59), 773, 56);
-           posY = posY + 58;
-
-
-
-           tableContainer.add(listaEmpresas);
-
-
-        }
 
         tableContainer.setBounds(0,0,772, 465);
         //tableContainer.setLayout(new ScrollPaneLayout());
@@ -150,6 +138,48 @@ public class AdminUserPanel {
         adsButton = utilities.crearBotonesNavBar(112, 458, 152, 47, "Anuncios");
 
         contactButton = utilities.crearBotonesNavBar(122, 593, 160, 47, "Contacto");
+
+        adelante.setBounds(439, 698,45, 51);
+
+        //LISTENER USER PANEL adsButton
+        adelante.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+                for (int i = 8; i < 16; i++ ) {
+
+
+                    listaEmpresas = new JLabel(NombreTrabajadores[i], SwingConstants.CENTER);
+                    try {
+                        listaEmpresas.setFont(
+                                Font.createFont(Font.TRUETYPE_FONT, Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("fonts/BebasNeue-Regular.ttf")))); // Añadimos
+                    } catch (FontFormatException ex) {
+                        throw new RuntimeException(ex);
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                    // fuente
+                    // personalizada
+                    listaEmpresas.setFont(listaEmpresas.getFont().deriveFont(Font.PLAIN, 48)); // Añadimos el tamaño de la fuente
+                    listaEmpresas.setVisible(true);
+                    listaEmpresas.setOpaque(true);
+                    listaEmpresas.setBorder(BorderFactory.createRaisedSoftBevelBorder());
+                    listaEmpresas.setBackground(Color.decode("#D2D9FE"));
+                    listaEmpresas.setLayout(null);
+
+
+
+                    listaEmpresas.setBounds((int) -1.8, (int) (posY + 59), 773, 56);
+                    posY = posY + 58;
+
+
+
+                    tableContainer.add(listaEmpresas);
+
+
+                }
+
+            }
+        });
 
         userInfo.setBounds(358, 169, 372,57);
         userInfo.setContentAreaFilled(false);
@@ -180,35 +210,19 @@ public class AdminUserPanel {
             }
         });
 
-        createUserButton.setBounds(1055, (int) 19.5, 58, 54);
-        createUserButton.setVisible(true);
-        createUserButton.setContentAreaFilled(false);
-        createUserButton.setToolTipText("Solicitar Nuevo Usuario");
 
 
 
 
 
-        createUserButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                //call another method in the same class which will close this Jframe
-                String idUser = JOptionPane.showInputDialog("Introduce ID del trabajador");
-                String emailUser = JOptionPane.showInputDialog("Introduce Correo del Usuario");
-                int levelUser = Integer.parseInt(JOptionPane.showInputDialog("Introduce Nivel de Acceso"));
 
 
-
-            }
-        });
-
-
-
+        adminUserPanelBackground.add(adelante);
         adminUserPanelBackground.add(adminUserButton);
         adminUserPanelBackground.add(adsButton);
         adminUserPanelBackground.add(contactButton);
         adminUserPanelBackground.add(userInfo);
         adminUserPanelBackground.add(buissnesListSection);
-        adminUserPanelBackground.add(createUserButton);
         infoContainer.add(tableContainer);
         infoContainer.add(adminNameTitle);
         infoContainer.add(adminIDTitle);

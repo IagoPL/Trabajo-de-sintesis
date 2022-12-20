@@ -20,6 +20,8 @@ public class BuyFlyerPanel {
     //SE CREAN JTEXTFIELDS
     JTextField flyerQuantity = new JTextField();
     JTextField flyerCP = new JTextField();
+    JTextField flyerTitle = new JTextField();
+
 
     public BuyFlyerPanel() throws IOException, FontFormatException {
 
