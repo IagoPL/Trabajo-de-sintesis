@@ -1,2 +1,76 @@
+import java.sql.SQLException;
+import java.sql.Statement;
+
 public class WebCrud {
+
+    private String mensaje;
+
+    public String add(ConectividadBBDD con, DDBBWeb value) {
+
+        String scriptSql = "insert into WEB " +
+                "(ID_ANUNCIO, URL)" +
+                " values ('" + value.getWebURL() + "'," + value.getIdAnuncio() +   ")";
+        System.out.println(scriptSql);
+
+        try {
+            Statement pst = con.getConn().createStatement();
+            mensaje = "guardado correctamente";
+            pst.execute(scriptSql);
+            pst.close();
+
+        } catch (SQLException e) {
+            mensaje = "Se produjo un error: " + e.getMessage();
+        }
+
+
+        return mensaje;
+    }
+
+    public String delete(ConectividadBBDD con, DDBBWeb value) {
+
+
+        String scriptSql = "delete from WEB where WEB = value.getWebURL()";
+
+        System.out.println(scriptSql);
+
+        try {
+            Statement pst = con.getConn().createStatement();
+            mensaje = "borrado correctamente";
+            pst.execute(scriptSql);
+            pst.close();
+
+        } catch (SQLException e) {
+            mensaje = "Se produjo un error: " + e.getMessage();
+        }
+
+
+        return mensaje;
+    }
+
+    public String edit(ConectividadBBDD con, DDBBWeb value) {
+
+
+        String scriptSql = "update WEB  set URL = '" + value.getWebURL() + "', " + value.getIdAnuncio()  + ")";
+
+        System.out.println(scriptSql);
+
+        try {
+            Statement pst = con.getConn().createStatement();
+            mensaje = "borrado correctamente";
+            pst.execute(scriptSql);
+            pst.close();
+
+        } catch (SQLException e) {
+            mensaje = "Se produjo un error: " + e.getMessage();
+        }
+
+
+        return mensaje;
+    }
+
+
+    public void show(String column, String[] tables) {
+
+    }
 }
+

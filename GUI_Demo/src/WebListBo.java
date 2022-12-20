@@ -3,7 +3,7 @@ public class WebListBo {
     private String mensaje;
     private WebListCrud WebListCrud = new WebListCrud();
 
-    public String add(WebListCrud value) {
+    public String add(DDBBLista_Web value) {
 
         ConectividadBBDD conn = new ConectividadBBDD();
         conn.getConnection();
