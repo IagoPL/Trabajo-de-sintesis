@@ -9,18 +9,22 @@ import java.util.logging.Logger;
 
 public class ConectividadBBDD {
 
-    private static Connection conn = null;
+    public Connection conn = null;
+
+    public Connection getConn() {
+        return conn;
+    }
+
     private static String login = "22_23_DAW_BEV";
     private static String clave = "123456";
     private static String urlIlerna = "jdbc:oracle:thin:@192.168.3.26:1521:XE";
     private static String urlGlobal = "jdbc:oracle:thin:@oracle.ilerna.com:1521:XE";
 
-    public static Connection getConnection() {
-
+    public void getConnection() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             conn = DriverManager.getConnection(urlIlerna, login, clave);
-            conn.setAutoCommit(false);
+            //conn.setAutoCommit(false);
             if (conn != null) {
                 System.out.println("Conexion exitosa");
             } else {
@@ -28,9 +32,8 @@ public class ConectividadBBDD {
             }
 
         } catch (ClassNotFoundException | SQLException e) {
-            JOptionPane.showMessageDialog(null,"conexion fallida");
+            JOptionPane.showMessageDialog(null,e.toString());
         }
-        return conn;
     }
 
     public void desconexion(){
