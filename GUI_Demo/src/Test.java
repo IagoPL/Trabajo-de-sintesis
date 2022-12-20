@@ -4,11 +4,11 @@ public class Test {
     String mensaje = "";
 
     public void insertar() {
-        user.setApellidos("lujano");
-        user.setContrasena("perrito124");
-        user.setEmpresa(123);
-        user.setNick("JordiEvole");
-        user.setNombre("holu");
+        user.setApellidos("Rovira");
+        user.setContrasena("sanpedro");
+        user.setEmpresa(2);
+        user.setNick("Nerii");
+        user.setNombre("Nerea");
         user.setNivel(1);
         mensaje = uBo.add(user);
         System.out.println(mensaje);

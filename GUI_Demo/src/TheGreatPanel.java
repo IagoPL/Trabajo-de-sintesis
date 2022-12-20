@@ -25,6 +25,7 @@ public class TheGreatPanel {
     ContractAddPanel contractAddPanel = new ContractAddPanel();
     BuyFlyerPanel buyFlyerPanel = new BuyFlyerPanel();
     BuyWebAddPanel buyWebAddPanel = new BuyWebAddPanel();
+    BuyWebbAddPanel2 buyWebbAddPanel2 = new BuyWebbAddPanel2();
     UserListByBuissnesPanel userListByBuissnesPanel = new UserListByBuissnesPanel();
 
 
@@ -55,6 +56,7 @@ public class TheGreatPanel {
        GreatPanel.add(userListByBuissnesPanel.userListPanel, "User List Panel");
        GreatPanel.add(buyFlyerPanel.buyFlyerPanel, "Buy Flyer Panel");
        GreatPanel.add(buyWebAddPanel.buyWebAddPanel, "Buy Web Panel");
+       GreatPanel.add(buyWebbAddPanel2.buyWebAddPanel2,"Buy Web Panel 2" );
         Window.add(GreatPanel);
 
 
@@ -286,12 +288,34 @@ public class TheGreatPanel {
             }
         });
 
-        //LISTENER ADMIN USER PANEL listaEmpresas
-        adminUserPanel.listaEmpresas.addMouseListener(new MouseAdapter() {
+        //BUY WEB ADD PANEL sizeLittle
+
+        buyWebAddPanel.sizeLittle.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 //call another method in the same class which will close this Jframe
-                cardLayout.show(GreatPanel, "User List Panel");
+                cardLayout.show(GreatPanel, "Buy Web Panel 2");
+
+            }
+        });
+
+        //BUY WEB ADD PANEL sizeMedium
+        buyWebAddPanel.sizeMedium.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                //call another method in the same class which will close this Jframe
+                cardLayout.show(GreatPanel, "Buy Web Panel 2");
+
+            }
+        });
+
+        //BUY WEB ADD PANEL sizeBig
+
+        buyWebAddPanel.sizeBig.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                //call another method in the same class which will close this Jframe
+                cardLayout.show(GreatPanel, "Buy Web Panel 2");
 
             }
         });
