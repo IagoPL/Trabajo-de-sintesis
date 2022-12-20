@@ -1,7 +1,7 @@
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class Crud {
+public class UserCrud {
     private String mensaje;
 
     public String add(ConectividadBBDD con, DDBBUsuarios value) {
@@ -32,7 +32,7 @@ public class Crud {
         return mensaje;
     }
 
-    public String delete(ConectividadBBDD con, DDBBUsuarios value) {
+    public String delete(ConectividadBBDD con, int  value) {
         PreparedStatement pst = null;
 
         String scriptSql = "delete from USUARIO where USUARIO = ?";
@@ -41,7 +41,7 @@ public class Crud {
         try {
             pst = con.PreparedStatement(scriptSql);
 
-            pst.setInt(1,value.getId_usuario());
+            pst.setInt(1,value);
 
 
             mensaje = "borrado correctamente";
@@ -54,7 +54,7 @@ public class Crud {
         return mensaje;
     }
 
-    public String edit(ConectividadBBDD con, DDBBUsuarios value, String column, String[] tables) {
+    public String edit(ConectividadBBDD con, DDBBUsuarios value) {
         PreparedStatement pst = null;
 
         String scriptSql = "update USUARIO set NOMBRE = ?, " +
