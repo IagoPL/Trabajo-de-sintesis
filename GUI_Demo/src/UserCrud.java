@@ -26,58 +26,50 @@ public class UserCrud {
         return mensaje;
     }
 
-    public String delete(ConectividadBBDD con, int  value) {
-        PreparedStatement pst = null;
+    public String delete(ConectividadBBDD con, DDBBUsuarios value) {
 
-        String scriptSql = "delete from USUARIO where USUARIO = ?";
 
+        String scriptSql = "delete from USUARIO where USUARIO = value.getID()";
+
+        System.out.println(scriptSql);
 
         try {
-            pst = con.PreparedStatement(scriptSql);
-
-            pst.setInt(1,value);
-
-
+            Statement pst = con.getConn().createStatement();
             mensaje = "borrado correctamente";
-            pst.execute();
+            pst.execute(scriptSql);
             pst.close();
 
         } catch (SQLException e) {
             mensaje = "Se produjo un error: " + e.getMessage();
         }
+
+
         return mensaje;
     }
 
     public String edit(ConectividadBBDD con, DDBBUsuarios value) {
-        PreparedStatement pst = null;
 
-        String scriptSql = "update USUARIO set NOMBRE = ?, " +
-                "APELLIDOS = ?, CONTRASENA = ?, EMPRESA = ?, NICK = ?, NIVEL = ? where ID_USUARIO = ?";
 
+        String scriptSql = "update USUARIO  set NOMBRE = '" +  value.getNombre()  +"', APELLIDOS = '" +  value.getNombre()  +"', CONTRASENA = '" +  value.getNombre()  +"', EMPRESA = '" +  value.getNombre() +"', NICK = '" +  value.getNombre() +"', NIVEL = '" +  value.getNombre()+ "')"  ;
+
+        System.out.println(scriptSql);
 
         try {
-            pst = con.PreparedStatement(scriptSql);
-
-            pst.setString(1, value.getNombre());
-            pst.setString(2, value.getApellidos());
-            pst.setString(3, value.getContrasena());
-            pst.setInt(4, value.getEmpresa());
-            pst.setString(5, value.getNick());
-            pst.setInt(6, value.getNivel());
-            pst.setInt(7,value.getId_usuario());
-
-            mensaje = "actualizado correctamente";
-            pst.execute();
+            Statement pst = con.getConn().createStatement();
+            mensaje = "borrado correctamente";
+            pst.execute(scriptSql);
             pst.close();
 
         } catch (SQLException e) {
             mensaje = "Se produjo un error: " + e.getMessage();
         }
+
+
         return mensaje;
     }
 
-    //    ajustar para mostrar
-    public void show(String column, String[] tables){
+
+    public void show(String column, String[] tables) {
 
     }
 }
