@@ -7,7 +7,7 @@ public class Test {
         user.setApellidos("lujano");
         user.setContrasena("perrito124");
         user.setEmpresa(123);
-        user.setNick("el yoya");
+        user.setNick("JordiEvole");
         user.setNombre("holu");
         user.setNivel(1);
         mensaje = uBo.add(user);

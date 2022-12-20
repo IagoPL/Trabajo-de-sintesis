@@ -269,11 +269,19 @@ public class TheGreatPanel {
 
 
 
-        //LISTENER ADS INFORMATION PANEL userButton
+        //LISTENER CONTRACT ADS PANEL contratarAddPaneltMarchaAtras
         contractAddPanel.contrarAddPanelMarchaAtras.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 //call another method in the same class which will close this Jframe
                 cardLayout.show(GreatPanel, "Ads Panel");
+
+            }
+        });
+
+        buyFlyerPanel.flyerAtras.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                //call another method in the same class which will close this Jframe
+                cardLayout.show(GreatPanel, "Contract Add Panel");
 
             }
         });
