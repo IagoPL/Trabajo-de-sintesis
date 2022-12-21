@@ -23,7 +23,7 @@ public class ConectividadBBDD {
     public void getConnection() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            conn = DriverManager.getConnection(urlGlobal, login, clave);
+            conn = DriverManager.getConnection(urlIlerna, login, clave);
             //conn.setAutoCommit(false);
             if (conn != null) {
                 System.out.println("Conexion exitosa");
