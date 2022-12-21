@@ -1,12 +1,12 @@
 public class DDBBWeb {
 
     private int idAnuncio;
-    private int webURL;
+    private String webURL;
 
     public DDBBWeb() {
     }
 
-    public DDBBWeb(int idAnuncio, int webURL) {
+    public DDBBWeb(int idAnuncio, String webURL) {
         this.idAnuncio = idAnuncio;
         this.webURL = webURL;
     }
@@ -19,11 +19,11 @@ public class DDBBWeb {
         this.idAnuncio = idAnuncio;
     }
 
-    public int getWebURL() {
+    public String getWebURL() {
         return webURL;
     }
 
-    public void setWebURL(int webURL) {
+    public void setWebURL(String webURL) {
         this.webURL = webURL;
     }
 }

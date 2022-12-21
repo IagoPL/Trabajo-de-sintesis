@@ -14,7 +14,7 @@ public class WebListCrud {
 
         try {
             Statement pst = con.getConn().createStatement();
-            mensaje = "guardadp correctamente";
+            mensaje = "guardado correctamente";
             pst.execute(scriptSql);
             pst.close();
 
