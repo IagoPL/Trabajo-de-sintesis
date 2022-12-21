@@ -46,4 +46,5 @@ public class DDBBMensajeria {
     public void setTextoMensaje(String textoMensaje) {
         this.textoMensaje = textoMensaje;
     }
+
 }
