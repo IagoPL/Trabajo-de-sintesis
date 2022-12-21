@@ -8,6 +8,7 @@ public class DDBBFlyer {
     private int color;
 
     public DDBBFlyer() {
+
     }
 
     public DDBBFlyer(int cp, int idAnuncio, int cantidadFlyers, int idFlyer, int color) {

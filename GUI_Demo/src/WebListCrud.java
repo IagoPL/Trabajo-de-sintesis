@@ -9,7 +9,7 @@ public class WebListCrud {
 
         String scriptSql = "insert into LISTA_WEB " +
                 "(URL, NUMERO_ANUNCIOS, TAMANO_DE_LOS_ANUNCIOS)" +
-                " values (''" + value.getWebURL() + "''," + value.getNumeroDeAnuncios() + ", " + value.getTamañoDeLosAnuncios() + ")";
+                " values ('" + value.getWebURL() + "'," + value.getNumeroDeAnuncios() + ", " + value.getTamañoDeLosAnuncios() + ")";
         System.out.println(scriptSql);
 
         try {
